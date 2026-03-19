@@ -11,10 +11,6 @@ function directoryMiddleware(req, res, next) {
     const writeMethods = new Set(['POST', 'PUT', 'DELETE']);
     req.isWrite = writeMethods.has(req.method.toUpperCase());
 
-    if (req.path === '/') {
-        return res.redirect('/titles/show');
-    }
-
     next();
 }
 

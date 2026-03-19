@@ -6,12 +6,12 @@
 }
 .list-content-with-icon .user-icon-container.notify:after,
 .list-content-with-icon .icon-container.notify:after {
-    content: url('/img/notify-icon.png');
+    content: url('../img/notify-icon.png');
 }
 .profile-tutorial .checkbox-button.checked:after,
 .add-post-page .spoiler-button.checked:after,
 .add-reply-page .spoiler-button.checked:after {
-    background: url('/img/checkbox-checked.png') no-repeat center center, -webkit-gradient(linear, left top, left bottom, from(#81e52e), to(#5ac800)) 0 0;
+    background: url('../img/checkbox-checked.png') no-repeat center center, -webkit-gradient(linear, left top, left bottom, from(#81e52e), to(#5ac800)) 0 0;
 }
 .eshop-button:before {
     background-position: -34px 0;
@@ -201,17 +201,17 @@
 .symbol:before {
     content: "";
     float: left;
-    background-image: url('/img/icons.png');
+    background-image: url('../img/icons.png');
     background-repeat: no-repeat;
 }
 .symbol span.symbol-label {
     display: none;
 }
 #form-content .symbol:before {
-    background-image: url('/img/form-icons.png');
+    background-image: url('../img/form-icons.png');
 }
 .select-from-album-button .symbol:before {
-    background-image: url('/img/icons.png') !important;
+    background-image: url('../img/icons.png') !important;
 }
 body {
     width: 400px;
@@ -222,7 +222,7 @@ body {
     padding: 0;
     color: #323232;
     word-wrap: break-word;
-    background: #eeeeee url('/img/background.png');
+    background: #eeeeee url('../img/background.png');
     background-attachment: fixed;
     min-height: 460px;
 }
@@ -367,7 +367,7 @@ button {
     display: inline-block;
 }
 #header {
-    background: url('/img/header.png') #5ac800;
+    background: url('../img/header.png') #5ac800;
 }
 #header {
     height: 220px;
@@ -725,7 +725,7 @@ ul + .headline {
 .select-button:before {
     content: "";
     float: right;
-    background-image: url('/img/icons.png');
+    background-image: url('../img/icons.png');
     background-repeat: no-repeat;
     position: absolute;
     top: 50%;
@@ -894,7 +894,7 @@ ul + .headline {
     border-right: 1px solid rgba(0, 0, 0, 0.2);
     line-height: 30px;
     color: #333;
-    background: url('/img/button-bg.png') center 0 no-repeat;
+    background: url('../img/button-bg.png') center 0 no-repeat;
     pointer-events: none;
 }
 .radio-buttons-2 label:first-child,
@@ -936,7 +936,7 @@ ul + .headline {
 .radio-buttons-2 label.loading,
 .radio-buttons-3 label.loading {
     text-indent: -3000px;
-    background: url('/img/loading-image-white.gif') no-repeat center center, -webkit-gradient(linear, left top, left bottom, from(#81e52e), to(#5ac800)) 0 0;
+    background: url('../img/loading-image-white.gif') no-repeat center center, -webkit-gradient(linear, left top, left bottom, from(#81e52e), to(#5ac800)) 0 0;
 }
 .radio-buttons-2 label.checked-mark,
 .radio-buttons-3 label.checked-mark {
@@ -1051,7 +1051,7 @@ ul + .headline {
     margin-right: 2px;
 }
 .unfavorite-button .symbol:before {
-    background: url('/img/icons-big.png') -78px 0;
+    background: url('../img/icons-big.png') -78px 0;
     float: inherit;
     display: inline-block;
     vertical-align: middle;

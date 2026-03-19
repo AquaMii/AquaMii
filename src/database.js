@@ -1,27 +1,25 @@
 const { Pool } = require('pg');
 const dotenv = require('dotenv');
 const logger = require('./logger');
+
 dotenv.config();
 
 const pool = new Pool({
-  host: process.env.DB_HOST,
+  host: process.env.DB_HOST || '127.0.0.1',
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
-  port: process.env.DB_PORT,
+  port: parseInt(process.env.DB_PORT || '5432', 10), 
 });
 
 async function connectDB() {
   try {
     const client = await pool.connect();
-    logger.database('Postgres Database connected!');
+    logger.info('Postgres Database connected!');
     client.release();
   } catch (err) {
-    logger.error('Error:', err.message);
+    logger.error('Postgres Connection Error: ' + err.message);
   }
 }
 
-module.exports = {
-  pool,
-  connectDB
-};
+module.exports = { pool, connectDB };

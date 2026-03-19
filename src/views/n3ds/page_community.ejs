@@ -1,0 +1,29 @@
+<%- include('partials/header') %>
+
+<div id="body" class="community-post-list" data-region-id="2">
+    <div class="title-header with-header-banner">
+		<div class="header-banner-container post-subtype-default-container">
+		<img src="" height="168" width="400">
+	</div>
+	<h1 class="info-content">
+		<span class="icon-container"><img src="https://cdn.innoverse.club/images/<%= community.id %>.jpg" class="icon" width="48" height="48"></span>
+		<span class="title-container">
+			<span class="title"><%= community.name %></span>
+		</span>
+	</h1>
+	<span class="platform-tag platform-tag-<%= community.platform_id %>"></span>
+</div>
+
+<div id="header-meta" class="header-meta-with-description">
+	<a href="#" class="favorite-button symbol button top-right-button checked" data-action-favorite="/titles/oaE8rzZL7PO2q514nvNp/qWNg64rE2AQ2y0VwKbJd/favorite.json" data-action-unfavorite="/titles/oaE8rzZL7PO2q514nvNp/qWNg64rE2AQ2y0VwKbJd/unfavorite.json"></a>
+	<a href="#" class="button symbol setting-button" data-sound="SE_OLV_OK_SUB" data-pjax="1"></a>
+</div>
+
+<div class="community-info">
+	<p class="text"><%= community.description %></p>
+</div>
+
+<div class="tab2">
+	<a id="tab-header-post" href="/titles/"><span class="symbol new-posts">All</span></a>
+	<a id="tab-header-hot-post" href="/titles/"><span class="name">Popular</span></a>
+</div>

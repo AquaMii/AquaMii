@@ -1,0 +1,31 @@
+<%- include('partials/header') %>
+
+<div id="body" class="news-page" data-region-id="2">
+    <div class="title-header text-header">
+        <div class="header-banner-container">
+            <div class="header-banner">
+                <p>Here you can see if you've gotten a response or reaction from other users.</p>
+            </div>
+        </div>
+        <h1 class="info-content">
+            <span class="icon-container"></span>
+            <span class="title-container">
+                <span class="title">Notifications</span>
+            </span>
+        </h1>
+    </div>
+    <div class="body-content">
+        <div class="tab-body">
+            <div class="tab2">
+				<a id="tab-header" href="/news/my_news" data-pjax="1" class="selected"><span class="name">Notifications</span></a>
+				<a id="tab-header" href="/news/dms" class="symbol" data-pjax="1"><span class="name">Messages</span></a>
+                <a id="tab-header" href="#" class="symbol" data-pjax="1"><span class="name">Friends</span></a>
+			</div>
+            <div id="news-tutorial" class="tutorial-window">
+                <p>New notifications are marked with an orange dot.</p>
+                <a href="#" class="button tutorial-close-button" data-tutorial-name="my_news">Close</a>
+            </div>
+            <center><p>No notifications.</p></center> 
+        </div>
+    </div>
+</div>
