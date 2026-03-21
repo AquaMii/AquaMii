@@ -1,0 +1,2 @@
+mii_image = https://mii-unsecure.ariankordi.net/miis/image.png?nnid=LeChatFrancais&api_id=1
+json_act  = https://mii-unsecure.ariankordi.net/mii_data/LeChatFrancais?api_id=1

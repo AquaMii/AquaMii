@@ -1,8 +1,14 @@
-function authMiddleware(req, res, next) {
-  if (!req.session.user) {
-    return res.redirect('/account/login');
-  }
-  next();
+function requireAuth(req, res, next) {
+    const publicPaths = ['/account/login', '/account/register'];
+    if (publicPaths.includes(req.path)) {
+        return next();
+    }
+
+    if (!req.session.user) {
+        return res.redirect('/account/login');
+    }
+
+    next();
 }
 
-module.exports = { authMiddleware };
+module.exports = { requireAuth };

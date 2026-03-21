@@ -1,0 +1,45 @@
+{
+    "activity": {
+        "title": "Activity Feed",
+        "description": "Here you can view posts and more from the users you follow."
+    },
+    "communities": {
+        "title": "Communities",
+        "description": "Check out the communities for games that you play or games that you're curious about!",
+        "favorites": "Favorite Communities",
+        "search": {
+            "name": "Search",
+            "description": "Search Communities"
+        },
+        "headline": {
+            "new_communities": "New Communities",
+            "popular_communities": "Popular Communities"
+        },
+        "filter": {
+            "name": "Filter",
+            "select": "Please make a selection"
+        }
+    },
+    "notifications": {
+        "title": "Notifications",
+        "description": "Here you can see if you've gotten a response or reaction from other users."
+    },
+    "account": {
+        "register": {
+            "title": "Sign Up",
+            "description": "Please create an account to access the Miiverse network."
+        },
+        "login": {
+            "title": "Sign In",
+            "description": "Please sign in to access the Miiverse network."
+        }
+    },
+    "menu": {
+        "close": "Close",
+        "back": "Back",
+        "report": "Report",
+        "block": "Block",
+        "follow": "Follow",
+        "unfollow": "Unfollow"
+    }
+}

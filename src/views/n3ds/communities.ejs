@@ -5,13 +5,13 @@
     <div class="title-header text-header">
 		<div class="header-banner-container">
 			<div class="header-banner">
-				<p>Check out the communities for games that you play or games that you're curious about!</p>
+				<p><%= lang.communities.description %></p>
 			</div>
 		</div>
 		<h1 class="info-content">
 			<span class="icon-container"></span>
 			<span class="title-container">
-				<span class="title">Communities</span>
+				<span class="title"><%= lang.communities.title %></span>
 			</span>
 		</h1>
 	</div>
@@ -29,7 +29,7 @@
 	</div>
 	<div class="community-list">
 		<div class="headline with-filter headline-wiiu"> <!-- 3ds -->
-			<h2>New Communities</h2>
+			<h2><%= lang.communities.headline.new_communities %></h2>
 			<div class="with-filter-right">
 				<div class="select-button">
 					<label id="community-filter" class="">
@@ -50,7 +50,7 @@
 			<% communities.forEach(community => { %>
 				<li id="community-<%= community.id %>" class="">
 					<span class="icon-container">
-						<img src="https://cdn.innoverse.club/images/<%= community.id %>.jpg" class="icon" width="48" height="48">
+						<img src="/img/<%= community.id %>.jpg" class="icon" width="48" height="48">
 					</span>
 					<a href="/titles/<%= community.id %>" class="arrow-button scroll" data-pjax="1"></a>
 					<div class="body">

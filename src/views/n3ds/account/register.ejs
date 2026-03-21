@@ -4,42 +4,41 @@
     <div class="title-header text-header">
         <div class="header-banner-container">
             <div class="header-banner">
-                <p>Please create an account to access the Miiverse network.</p>
+                <p><%= lang.account.register.description %></p>
             </div>
         </div>
         <h1 class="info-content">
             <span class="icon-container"></span>
             <span class="title-container">
-                <span class="title"><span>Sign Up</span></span>
+                <span class="title"><span><%= lang.account.register.title %></span></span>
             </span>
         </h1>
     </div>
-
-    <div class="body-content" id="login-form-container">
+    <div class="body-content" id="register-form-container">
         <div class="no-content-window">
             <div class="window">
                 <form action="/account/register" method="POST" style="padding: 20px;">
                     <div style="margin-bottom: 10px;">
-                        <input type="email" name="email" placeholder="Email" required 
+                        <input type="email" name="email" placeholder="Email" required
                                style="width: 80%; padding: 4px; border: 1px solid #ccc; border-radius: 4px;">
                     </div>
                     <div style="margin-bottom: 10px;">
-                        <input type="text" name="username" placeholder="Username" required 
+                        <input type="text" name="pnid" placeholder="PNID" required
                                style="width: 80%; padding: 4px; border: 1px solid #ccc; border-radius: 4px;">
                     </div>
                     <div style="margin-bottom: 10px;">
-                        <input type="password" name="password" placeholder="Password" required 
+                        <input type="password" name="password" placeholder="Password" required
                                style="width: 80%; padding: 4px; border: 1px solid #ccc; border-radius: 4px;">
                     </div>
-
                     <div class="window-bottom-buttons">
-                        <button type="button" class="back-button button" onClick="history.back();">Back</button>
-                        <button type="submit" class="button" style="background: #e65c00; color: white; border: none;">Sign Up</button>
+                        <button type="submit" class="button"
+                                style="background: #e65c00; color: white; border: none;">
+                            Sign Up
+                        </button>
                     </div>
                 </form>
-
-                <p style="text-align: center; padding-bottom: 15px;">
-                    Already have an AquaMii account? <a href="/account/login">Sign In</a>
+                <p style="text-align: center; padding-bottom: 15px;">Already have an AquaMii account?
+                    <a href="/account/login">Sign In</a>
                 </p>
             </div>
         </div>
