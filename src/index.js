@@ -17,13 +17,16 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 app.use(express.json());
+
 app.use(express.urlencoded({
 	extended: true,
 	limit: '1mb'
 }));
+
 app.use(express.static(path.join(__dirname, './static')));
 app.use('/css', express.static(path.join(__dirname, 'static/css')));
 app.use(cookieParser());
+
 app.use(session({
     store: new RedisStore({ client: redisClient }),
     secret: process.env.AES_KEY,

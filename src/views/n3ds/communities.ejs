@@ -17,11 +17,11 @@
 	</div>
 	<div class="community-top-top-container">
 		<span class="top-left-button title-search-button">
-			<span class="symbol">Search</span>
+			<span class="symbol"><%= lang.communities.search.name %></span>
 				<input data-action="/titles/search" name="query" class="title-search-title-id" minlength="2" maxlength="20" type="text" monospace="on" guide="Search Communities" cave_oninput="$(document.activeElement).trigger('input')" value="">
 		</span>
 		<a href="/communities/favorites" class="favorites-button top-right-button" data-pjax="1">
-			<span class="symbol">Favorite Communities</span>
+			<span class="symbol"><%= lang.communities.favorites %></span>
 		</a>
 	</div>
 	<div class="body-content" id="community-top" data-region="USA">
@@ -50,9 +50,9 @@
 			<% communities.forEach(community => { %>
 				<li id="community-<%= community.id %>" class="">
 					<span class="icon-container">
-						<img src="/img/<%= community.id %>.jpg" class="icon" width="48" height="48">
+						<img src="<%= community.icon %>" class="icon" width="48" height="48">
 					</span>
-					<a href="/titles/<%= community.id %>" class="arrow-button scroll" data-pjax="1"></a>
+					<a href="/titles/<%= community.community_id %>" class="arrow-button scroll" data-pjax="1"></a>
 					<div class="body">
 						<span class="community-name title"><%= community.name %></span>
 						<span class="platform-tag platform-tag-<%= community.platform_id %>"></span>

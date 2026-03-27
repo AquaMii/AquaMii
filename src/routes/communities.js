@@ -13,9 +13,9 @@ router.get('/', async (req, res) => {
     });
 });
 
-router.get('/:id', async (req, res) => {
-    const communityId = req.params.id;
-    const result = await pool.query('SELECT * FROM communities WHERE id = $1', [communityId]);
+router.get('/:community_id', async (req, res) => {
+    const community_id = req.params.community_id;
+    const result = await pool.query('SELECT * FROM communities WHERE community_id = $1', [community_id]);
 
     if (result.rows.length === 0) {
         return res.status(404).render(req.directory + '/404.ejs');

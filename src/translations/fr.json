@@ -5,8 +5,8 @@
     },
     "communities": {
         "title": "Communautés",
-        "description": "Découvrez les communautés pour les jeux auxquels vous jouez ou ceux qui vous intéressent !",
-        "favorites": "Communautés préférées",
+        "description": "Découvrez les communautés des jeux auxquels vous jouez ou qui vous intéressent !",
+        "favorites": "Communautés favorites",
         "search": {
             "name": "Rechercher",
             "description": "Rechercher des communautés"
@@ -24,19 +24,29 @@
         "title": "Notifications",
         "description": "Ici, vous pouvez voir si vous avez reçu une réponse ou une réaction d'autres utilisateurs."
     },
-    "account": {
-        "register": {
-            "title": "S'inscrire",
-            "description": "Veuillez créer un compte pour accéder au réseau Miiverse."
+    "welcome": {
+        "intro": {
+            "title": "Bienvenue sur AquaMii",
+            "description": "AquaMii vous permet de partager vos expériences de jeu avec des personnes du monde entier."
         },
-        "login": {
-            "title": "Se connecter",
-            "description": "Veuillez vous connecter pour accéder au réseau Miiverse."
+        "about": {
+            "title": "À propos d'AquaMii",
+            "description_first": "AquaMii est une recréation de Miiverse faite par des fans pour les fans.",
+            "description_second": "Il ne possède peut-être pas toutes les fonctionnalités que vous connaissez et appréciez, mais il reste tout à fait utilisable."
+        },
+        "configuring": {
+            "title": "Configuration de votre compte AquaMii",
+            "description": "Vous devez créer votre compte avant de pouvoir utiliser AquaMii."
+        },
+        "outro": {
+            "title": "Amusez-vous bien sur AquaMii !"
         }
     },
     "menu": {
         "close": "Fermer",
         "back": "Retour",
+        "next": "Suivant",
+        "start": "Commencer",
         "report": "Signaler",
         "block": "Bloquer",
         "follow": "Suivre",

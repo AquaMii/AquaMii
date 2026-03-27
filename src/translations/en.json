@@ -24,19 +24,29 @@
         "title": "Notifications",
         "description": "Here you can see if you've gotten a response or reaction from other users."
     },
-    "account": {
-        "register": {
-            "title": "Sign Up",
-            "description": "Please create an account to access the Miiverse network."
+    "welcome": {
+        "intro": {
+            "title": "Welcome to AquaMii",
+            "description": "AquaMii lets you share your in-game experiences with people from all over the world."
         },
-        "login": {
-            "title": "Sign In",
-            "description": "Please sign in to access the Miiverse network."
+        "about": {
+            "title": "About AquaMii",
+            "description_first": "AquaMii is a recreation of Miiverse made by fans for fans.",
+            "description_second": "It may not have all the features you know and love, but it can still be used nonetheless."
+        },
+        "configuring": {
+            "title": "Configuring your AquaMii account",
+            "description": "You need to create your account before you can start using AquaMii."
+        },
+        "outro": {
+            "title": "Have fun in AquaMii!"
         }
     },
     "menu": {
         "close": "Close",
         "back": "Back",
+        "next": "Next",
+        "start": "Start",
         "report": "Report",
         "block": "Block",
         "follow": "Follow",

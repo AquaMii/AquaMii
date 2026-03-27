@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<%= local %>">
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="/css/n3ds.css"></link>
+    <title><%= typeof title !== 'undefined' ? title : "AquaMii" %></title>
+    <link rel="stylesheet" href="/css/n3ds.css">
     <script src="/js/n3ds/cave-emulation.js"></script>
-    <script src="/js/n3ds/pjax.min.js"></script>
-    <script src="/js/n3ds/aquamii.min.js"></script>
+    <script src="/js/n3ds/pjax.js"></script>
+    <script src="/js/n3ds/aquamii.js"></script>
 </head>
 <body>

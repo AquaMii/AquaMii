@@ -1,0 +1,96 @@
+<%- include('../partials/header') %>
+
+<script>setTimeout(function(){cave.toolbar_setVisible(false);},1000);</script>
+<div id="welcome-3ds_start" class="start-page slide-page" data-slide-number="1" style="">
+	<div class="window-page">
+		<div class="window welcome-window">
+			<div class="window-title">
+				<h1 class="window-title-inner"><%= lang.welcome.intro.title %></h1>
+			</div>
+			<div class="window-body">
+				<div class="window-body-inner message">
+					<p><%= lang.welcome.intro.description %></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<a href="#" class="fixed-bottom-button left exit-button welcome-exit-button" data-sound="SE_CTR_COMMON_SYSAPPLET_END"><%= lang.menu.close %></a>
+	<a href="#" class="fixed-bottom-button right next-button slide-button" data-slide="#welcome-feature"><%= lang.menu.next %></a>
+</div>
+<div id="welcome-feature" class="slide-page" data-slide-number="11" style="display: none;">
+	<div class="window-page">
+		<div class="window welcome-window">
+			<div class="window-title">
+				<h1 class="window-title-inner"><%= lang.welcome.about.title %></h1>
+			</div>
+			<div class="window-body">
+				<div class="window-body-inner message">
+					<p class="p1"><%= lang.welcome.about.description_first %></p>
+					<p><%= lang.welcome.about.description_second %></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<a href="#" class="fixed-bottom-button left back-button slide-button accesskey-B" data-slide="#welcome-3ds_start" data-sound="SE_OLV_CANCEL"><%= lang.menu.back %></a>
+	<a href="#" class="fixed-bottom-button right next-button slide-button" data-slide="#welcome-luminous_user_data"><%= lang.menu.next %></a>
+</div>
+<div id="welcome-luminous_user_data" class="slide-page" data-slide-number="10" style="display: none;">
+	<div class="window-page">
+		<div class="window welcome-window with-button">
+			<div class="window-title">
+				<h1 class="window-title-inner"><%= lang.welcome.configuring.title %></h1>
+			</div>
+			<div class="window-body-user_data">
+				<div class="window-body-inner message">
+					<p><%= lang.welcome.configuring.description %></p>
+				</div>
+			</div>
+			<div class="window-bottom-input">
+				<form action="/v1/people" method="POST" accept-charset="utf-8" id="user_data" data-check-url="{{ route('gate.check') }}">
+					<input type="text" id="welcome_nnid" name="pnid" placeholder="PNID" required><br>
+					<input type="password" id="welcome_password" name="password" placeholder="Password" required><br>
+					<label for="pnid">We use your PNID to fetch your Mii image.</label>
+
+					<button type="submit" class="fixed-bottom-button right next-button welcome-luminous_user_data-button" data-slide="#welcome-finish"><%= lang.menu.next %></button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<a href="#" class="fixed-bottom-button left back-button slide-button accesskey-B" data-slide="#welcome-feature" data-sound="SE_OLV_CANCEL"><%= lang.menu.back %></a>
+	<!-- <a href="#" class="fixed-bottom-button right next-button welcome-luminous_user_data-button" data-slide="#welcome-finish"><%= lang.menu.next %></a>-->
+</div>
+<div id="welcome-finish" class="slide-page" data-bgm="BGM_CAVE_SYOKAI2" data-slide-number="9" style="display: none;">
+	<div class="window-page">
+		<div class="window welcome-window">
+			<div class="window-title">
+				<h1 class="window-title-inner"><%= lang.welcome.outro.title %></h1>
+			</div>
+			<div class="window-body">
+				<div class="window-body-inner message">
+					<a href="#" class="fixed-bottom-button right next-button welcome-finish-button" data-activate-url="/welcome/activate?update_with_default=0" data-replace="1"><%= lang.menu.start %></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  var buttons = document.querySelectorAll(".slide-button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].onclick = function(e) {
+      e.preventDefault();
+      var target = this.getAttribute("data-slide");
+      if (!target) return;
+      var pages = document.querySelectorAll(".slide-page");
+      for (var j = 0; j < pages.length; j++) {
+        pages[j].style.display = "none";
+      }
+      var nextPage = document.querySelector(target);
+      if (nextPage) {
+        nextPage.style.display = "block";
+      }
+    };
+  }
+});
+</script>

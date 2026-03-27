@@ -17,7 +17,10 @@ const users = require('./users');
 const activity = require('./activity');
 const messages = require('./messages');
 const notifications = require('./notifications');
-const account = require('./account');
+
+// API
+const api_people = require('./api/people');
+const api_communities = require('./api/communities');
 
 logger.info('Miiverse Middleware loaded!');
 
@@ -38,6 +41,9 @@ console.use('/users', users);
 console.use('/', activity);
 console.use('/friend_messages', messages);
 console.use('/news', notifications);
-console.use('/account', account);
+
+// API
+console.use('/v1/people', api_people);
+console.use('/v1/communities', api_communities);
 
 module.exports = router;
