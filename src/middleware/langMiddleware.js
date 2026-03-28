@@ -2,11 +2,11 @@ const path = require('path');
 const fs = require('fs');
 
 const translations = {
-    fr: JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'translations', 'fr.json'), 'utf8')),
-    en: JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'translations', 'en.json'), 'utf8'))
+    en: JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'translations', 'en.json'), 'utf8')),
+    fr: JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'translations', 'fr.json'), 'utf8'))
 };
 
-function langMiddleware(req, res, next) {
+async function langMiddleware(req, res, next) {
     const header = req.headers['accept-language'] || '';
 
     let lang = header.slice(0, 2).toLowerCase();
@@ -21,4 +21,4 @@ function langMiddleware(req, res, next) {
     next();
 }
 
-module.exports = langMiddleware;
+module.exports = { langMiddleware };

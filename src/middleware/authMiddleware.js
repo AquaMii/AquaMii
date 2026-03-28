@@ -17,7 +17,15 @@ async function requireAuth(req, res, next) {
       );
 
       if (rows.length > 0) {
-        req.user = rows[0];
+        const user = rows[0];
+
+        if (user.banned === true) {
+          return res.render(req.directory + '/banned.ejs', {
+            user
+          });
+        }
+
+        req.user = user;
         return next();
       }
     }

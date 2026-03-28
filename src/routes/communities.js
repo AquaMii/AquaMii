@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
     const result = await pool.query('SELECT * FROM communities ORDER BY created_at DESC');
     const communities = result.rows;
 
-    res.render(req.directory + '/communities.ejs', { 
+    res.render(req.directory + '/communities.ejs', {
         communities,
         lang: res.locals.lang
     });
@@ -22,7 +22,9 @@ router.get('/:community_id', async (req, res) => {
     }
 
     const community = result.rows[0];
-    res.render(req.directory + '/page_community.ejs', { community });
+    res.render(req.directory + '/page_community.ejs', { 
+        community 
+    });
 });
 
 module.exports = router;

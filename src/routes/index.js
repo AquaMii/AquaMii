@@ -1,8 +1,8 @@
 const express = require('express');
 const subdomain = require('express-subdomain');
 const dotenv = require('dotenv');
-const directoryMiddleware = require('../middleware/directoryMiddleware');
-const langMiddleware = require('../middleware/langMiddleware');
+const { directoryMiddleware } = require('../middleware/directoryMiddleware');
+const { langMiddleware } = require('../middleware/langMiddleware');
 const { requireAuth } = require('../middleware/authMiddleware');
 const logger = require('../logger');
 

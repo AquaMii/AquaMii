@@ -5,6 +5,8 @@ const axios = require('axios');
 const bcrypt = require('bcrypt');
 const logger = require('../../logger');
 const { pool } = require('../../database');
+const minioClient = require('../../minio');
+const { v4: uuidv4 } = require('uuid');
 
 const router = express.Router();
 
@@ -46,29 +48,47 @@ router.post('/', async (req, res) => {
             });
         }
 
-        const mii_url = `https://mii-unsecure.ariankordi.net/miis/image.png?nnid=${pnid}&api_id=1`;
+        const imageResponse = await axios.get(
+            `https://mii-unsecure.ariankordi.net/miis/image.png?nnid=${pnid}&api_id=1`,
+            { responseType: 'arraybuffer' }
+        );
 
-        const insertQuery = `
+        const buffer = Buffer.from(imageResponse.data);
+
+        const file_name = `${uuidv4()}.png`;
+
+        await minioClient.putObject(
+            'miis',
+            file_name,
+            buffer,
+            { 'Content-Type': 'image/png' }
+        );
+
+        const mii_url = `https://cdn.innoverse.club/miis/${file_name}`;
+
+        const sql_query = `
             INSERT INTO peoples (pid, pnid, password, mii_name, mii_url, param_pack)
             VALUES ($1, $2, $3, $4, $5, $6)
             RETURNING id
         `;
-        
-        const new_user = await pool.query(insertQuery, [
+
+        const new_user = await pool.query(sql_query, [
             mii_data.pid,
-            pnid, 
-            password_hash, 
+            pnid,
+            password_hash,
             mii_data.name,
             mii_url,
             param_pack
         ]);
 
         const new_user_id = new_user.rows[0].id;
-        logger.info(`New user created: ${pnid} + ID: ${new_user_id})`);
+
+        logger.info(`New user created: ${pnid} + ID: ${new_user_id}`);
 
         res.cookie('param_pack', param_pack, { httpOnly: true });
 
-        return res.json({success: 1});
+        return res.json({ success: 1 });
+
     } catch (error) {
         logger.error(`Database error: ${error.message}`);
         return res.status(500).json({

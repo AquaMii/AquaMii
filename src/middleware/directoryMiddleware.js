@@ -1,4 +1,4 @@
-function directoryMiddleware(req, res, next) {
+async function directoryMiddleware(req, res, next) {
     req.timestamp = Date.now();
 
     const subdomainMap = {
@@ -14,4 +14,4 @@ function directoryMiddleware(req, res, next) {
     next();
 }
 
-module.exports = directoryMiddleware;
+module.exports = { directoryMiddleware };
