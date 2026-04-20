@@ -1,4 +1,5 @@
 # AquaMii
+# WARNING: THIS IS OLD AND NOW ARCHIVED, THE NEW VERSION OF AQUAMII IS HERE [NOW](https://github.com/AquaMii/AquaMii2).
 
 ## Portal
 - [ ] Account Creation
